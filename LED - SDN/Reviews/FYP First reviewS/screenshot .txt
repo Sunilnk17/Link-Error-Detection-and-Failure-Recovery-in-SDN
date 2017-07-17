@@ -1,0 +1,31 @@
+1.Open the Terminal application on your computer (Windows users will use PuTTY).
+
+In the Terminal window, use the SSH client on your computer to start an SSH session to the Mininet VM.
+
+ ssh -Y mininet@192.168.56.101
+
+In the Terminal window, which is now running an SSH session connected to the Mininet virtual machine, start an Xterm:
+
+ xterm -sb &
+
+2.The MiniEdit script is located in Mininet’s examples folder. To run MiniEdit, execute the command:
+
+
+$ sudo ~/mininet/examples/miniedit.py
+
+MiniEdit has a simple user interface that presents a canvas with a row of tool icons on the left side of the window, and a menu bar along the top of the window.
+
+3.Add eight switches and three controllers using the same method: Click on the Switch tool and add switches, then click on the Controller tool and add controllers.
+
+4.To start the simulation scenario, click the Run button on the MiniEdit GUI. In the terminal window from which you started MiniEdit, 
+you will see some messages showing the progress of the simulation startup and then the Miniedit CLI prompt 
+(because we checked Start CLI box in the MiniEdit preferences window).
+
+5.First, check the switch configurations in the network simulation to verify that everything is set up correctly.
+ You can run the MiniEdit menu command, Run ? Show OVS Summary to see an listing of switch configurations.
+ In this case, we can verify that each switch is listening to the correct controller on the correct port.
+
+6.Then, run a ping command to send traffic between host h1 to h8.
+
+mininet > pingall
+In the MiniEdit console, you see the results of the ping command
